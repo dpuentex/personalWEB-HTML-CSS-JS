@@ -52,7 +52,7 @@ body {
   color: white;
   margin-left: 4rem;
   font-weight: 500;
-  transition: 0.3 ease-in-out;
+  transition: 0.3s ease-in-out;
   border-bottom: 3px solid transparent;
 }
 
@@ -268,7 +268,9 @@ span {
   color: var(--main-color);
   text-shadow: 0 0 50px var(--main-color);
 }
-
+.about-img {
+  border-radius: 50%;
+}
 .about-img img {
   position: relative;
   width: 32vw;
@@ -278,7 +280,102 @@ span {
   cursor: pointer;
   transition: 0.4s ease-in-out;
 }
-.about-img h2 {
+.about-img img:hover {
+  box-shadow: 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+.heading {
+  text-align: center;
+  font-size: 8rem;
+}
+.about-content h2 {
   text-align: left;
   line-height: 1.5;
+}
+.about-content h3 {
+  font-size: 2rem;
+}
+.about-content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 3rem;
+}
+
+.about-content .text-animation span::before {
+  content: "Web Developer";
+  color: var(--main-color);
+  animation: words 20s infinite;
+}
+
+.about-content .text-animation span::after {
+  content: "";
+  background-color: var(--second-bg-color);
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid var(--second-bg-color);
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+  width: 50px;
+}
+
+.services {
+  background: var(--bg-color);
+  color: white;
+}
+
+.services h2 {
+  margin-bottom: 5rem;
+  color: white;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.service-box {
+  background-color: var(--main-color);
+  color: black;
+  height: 250px;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.service-box:hover {
+  background: white;
+  color: var(--main-color);
+  transform: scale(1.03);
+}
+
+.service-box .service-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-height: 200px;
+  justify-content: center;
+  align-items: baseline;
+  padding: 5em;
+}
+.service-info h4 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.service-info p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  max-height: 100px;
+  margin: auto;
 }
